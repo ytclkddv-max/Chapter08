@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Something for Nila</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap');
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#08090d;color:#f4f0e8;font-family:Inter,sans-serif}
+body{overflow-x:hidden}
+button{font:inherit}
+.screen{min-height:100vh;display:none;align-items:center;justify-content:center;padding:32px 22px;position:relative;overflow:hidden}
+.screen.active{display:flex;animation:fade .8s ease}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.bg{position:absolute;inset:0;background:radial-gradient(circle at 50% 35%,#22202a 0,#0b0c12 45%,#06070a 100%)}
+.stars{position:absolute;inset:0;opacity:.6;background-image:radial-gradient(circle,#d8c8a5 1px,transparent 1px);background-size:95px 95px;animation:drift 18s linear infinite}
+@keyframes drift{to{transform:translateY(95px)}}
+.content{position:relative;z-index:2;max-width:720px;width:100%;text-align:center}
+.eyebrow{letter-spacing:.28em;text-transform:uppercase;font-size:11px;color:#b8a984;margin-bottom:18px}
+h1,h2{font-family:"Cormorant Garamond",serif;font-weight:500;line-height:.95}
+h1{font-size:clamp(52px,14vw,100px);margin:0 0 20px}
+h2{font-size:clamp(42px,10vw,72px);margin:0 0 22px}
+p{font-size:16px;line-height:1.85;font-weight:300;color:#d4d0c8}
+.lead{max-width:560px;margin:0 auto}
+.btn{margin-top:30px;border:1px solid #8e8064;background:transparent;color:#eee7d9;padding:13px 24px;border-radius:30px;cursor:pointer;transition:.3s}
+.btn:hover{background:#d6c6a2;color:#111}
+.cards{display:grid;gap:12px;margin-top:30px;text-align:left}
+.card{border:1px solid #393631;background:rgba(255,255,255,.025);border-radius:18px;padding:22px;cursor:pointer;transition:.35s}
+.card:hover{transform:translateY(-3px);border-color:#9d8d6c}
+.card small{color:#b8a984;letter-spacing:.18em;text-transform:uppercase}
+.card h3{font-family:"Cormorant Garamond",serif;font-size:30px;margin:8px 0}
+.card .detail{display:none;color:#cfcac0;line-height:1.8}
+.card.open .detail{display:block;animation:fade .5s ease}
+.timeline{position:relative;margin:34px auto;max-width:600px;text-align:left}
+.timeline:before{content:"";position:absolute;left:8px;top:0;bottom:0;width:1px;background:#5a5141}
+.item{position:relative;padding:0 0 35px 35px}
+.item:before{content:"";position:absolute;left:3px;top:5px;width:10px;height:10px;border:1px solid #b8a984;border-radius:50%;background:#08090d}
+.item h3{font-family:"Cormorant Garamond",serif;font-size:29px;margin:0 0 6px}
+.item p{margin:0}
+.quote{margin:26px 0;padding:22px;border-left:2px solid #a8936b;background:rgba(255,255,255,.025);font-family:"Cormorant Garamond",serif;font-size:25px;line-height:1.35;color:#eee7d9}
+.letter{text-align:left;background:rgba(255,255,255,.025);border:1px solid #38352f;border-radius:20px;padding:28px;box-shadow:0 20px 70px rgba(0,0,0,.25)}
+.letter p{margin:0 0 18px}
+.final h1{font-size:clamp(55px,15vw,110px)}
+.signature{font-family:"Cormorant Garamond",serif;font-size:28px;color:#d7c8a7;margin-top:25px}
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+
+<section class="screen active" id="s1">
+  <div class="bg"></div><div class="stars"></div>
+  <div class="content">
+    <div class="eyebrow">08 · October · 2026</div>
+    <h1>A little something<br>for Nila mam.</h1>
+    <p class="lead">I could have simply wished you Happy Birthday…<br>but where's the fun in that?</p>
+    <button class="btn" onclick="go(2)">Begin the little journey →</button>
+  </div>
+</section>
+
+<section class="screen" id="s2">
+  <div class="bg"></div>
+  <div class="content">
+    <div class="eyebrow">A small story</div>
+    <h2>Mathumitha mam.<br><span style="color:#b8a984">Or maybe… Nila mam.</span></h2>
+    <p class="lead">There are some people we meet, and somehow, in just a few months, they become a meaningful part of our journey.</p>
+    <p class="lead">This is a little story about one of them.</p>
+    <button class="btn" onclick="go(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="screen" id="s3">
+  <div class="bg"></div>
+  <div class="content">
+    <div class="eyebrow">Five months</div>
+    <h2>Moments worth remembering.</h2>
+    <div class="timeline">
+      <div class="item"><h3>The First Meeting</h3><p>It started with simply meeting you.</p></div>
+      <div class="item"><h3>The First Message</h3><p>One day, I noticed that you seemed worried or sad. I didn't really know what to say, but I felt like I should check on you.</p></div>
+      <div class="item"><h3>“Sister”</h3><p>And then came that little moment when you first called yourself my sister in a text.</p></div>
+      <div class="item"><h3>College</h3><p>And now, even an ordinary day at college feels a little different when I see you.</p></div>
+    </div>
+    <button class="btn" onclick="go(4)">One memory in particular →</button>
+  </div>
+</section>
+
+<section class="screen" id="s4">
+  <div class="bg"></div>
+  <div class="content">
+    <div class="eyebrow">A beautiful memory</div>
+    <h2>The day “sister”<br>felt real.</h2>
+    <p>I told you about my wish to join the <strong>Army</strong>.</p>
+    <div class="quote">“As a teacher, I would say yes… but as a sister, I would say a big NO.”</div>
+    <p>That was probably one of the first moments when I truly felt that you weren't just saying “sister” — you meant it.</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:23px;color:#d8cdb7">Some memories are beautiful because of the words.<br>Some because of who said them.</p>
+    <button class="btn" onclick="go(5)">A little more →</button>
+  </div>
+</section>
+
+<section class="screen" id="s5">
+  <div class="bg"></div>
+  <div class="content">
+    <div class="eyebrow">Why you?</div>
+    <h2>Why you?</h2>
+    <div class="cards">
+      <div class="card" onclick="this.classList.toggle('open')"><small>01 · Kindness</small><h3>Your kindness</h3><div class="detail">Your kindness is something I genuinely admire.</div></div>
+      <div class="card" onclick="this.classList.toggle('open')"><small>02 · Comfort</small><h3>The way you make people feel</h3><div class="detail">You have this ability to make students feel comfortable and welcome.</div></div>
+      <div class="card" onclick="this.classList.toggle('open')"><small>03 · Connection</small><h3>The way you interact</h3><div class="detail">The way you interact with people doesn't feel distant or merely formal. You make people feel heard, valued, and comfortable being themselves.</div></div>
+    </div>
+    <button class="btn" onclick="go(6)">One last thing →</button>
+  </div>
+</section>
+
+<section class="screen" id="s6">
+  <div class="bg"></div>
+  <div class="content">
+    <div class="eyebrow">A letter for you</div>
+    <div class="letter">
+      <p><strong>Dear Nila mam,</strong></p>
+      <p>Five months isn't a very long time.</p>
+      <p>Yet somehow, within these five months, you've become someone I genuinely value.</p>
+      <p>You came into my life as a teacher, but somewhere along the way, you became someone I could look at as a sister and a friend.</p>
+      <p>I don't think relationships always need years to become meaningful. Sometimes, the way someone treats you, the comfort they bring, and the small moments you share are enough.</p>
+      <p>Thank you for being kind, for making people around you feel comfortable, and simply for being the person you are.</p>
+      <p>I'm genuinely glad that I met you.</p>
+      <p style="text-align:right;font-family:'Cormorant Garamond',serif;font-size:25px;color:#d7c8a7">Forever<br>All from II. B.Com. BA and Varshan</p>
+    </div>
+    <button class="btn" onclick="go(7)">And finally… 🎂</button>
+  </div>
+</section>
+
+<section class="screen final" id="s7">
+  <div class="bg"></div><div class="stars"></div>
+  <div class="content">
+    <div class="eyebrow">Today is about you</div>
+    <h1>Happy Birthday,<br><span style="color:#d2bd91">Nila mam!</span> 🎂</h1>
+    <p class="lead">May the coming year bring you the same kindness, happiness and warmth that you give to the people around you.</p>
+    <p class="lead">Stay exactly the wonderful person you are.</p>
+    <div class="signature">Teacher by profession.<br>Friend by choice.<br>Sister by heart. ♡</div>
+    <p style="margin-top:28px;color:#a9a49b">Forever<br>All from II. B.Com. BA and Varshan</p>
+  </div>
+</section>
+
+<script>
+function go(n){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById('s'+n).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
